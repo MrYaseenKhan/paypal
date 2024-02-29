@@ -72,15 +72,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             .then((id) {
                          log(".....................Payment Id : $id");
                           widget.onFinish(id);
-                         // Navigator.of(context).pop();
+                          if(mounted){
+                            Navigator.of(context).pop();
+                          }
+
                         });
                       } else {
-                      //  Navigator.of(context).pop();
+                        Navigator.of(context).pop();
                       }
-                    //  Navigator.of(context).pop();
+                     Navigator.of(context).pop();
                     }
                     if (request.url.contains(cancelURL)) {
-                     // Navigator.of(context).pop();
+                      Navigator.of(context).pop();
                     }
                     return NavigationDecision.navigate;
                   },
